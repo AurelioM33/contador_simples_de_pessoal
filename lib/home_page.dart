@@ -12,13 +12,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "Pode Entrar!!",
             style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
+              fontSize: 60,
               fontWeight: FontWeight.bold,
             ),
           )
