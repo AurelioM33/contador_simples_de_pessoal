@@ -15,12 +15,20 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Pode Entrar!!",
+            "Bem Vindo!!",
             style: TextStyle(
-              fontSize: 60,
+              fontSize: 40,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          SizedBox(height: 30),
+          Text(
+            "11",
+            style: TextStyle(
+              fontSize: 100,
               fontWeight: FontWeight.bold,
             ),
-          )
+          ),
         ],
       ),
     );
