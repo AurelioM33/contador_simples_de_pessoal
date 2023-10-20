@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             "Bem Vindo!!",
             style: TextStyle(
+              color: Colors.red,
               fontSize: 40,
               fontWeight: FontWeight.w900,
             ),
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             "11",
             style: TextStyle(
+              color: Colors.black,
               fontSize: 100,
               fontWeight: FontWeight.bold,
             ),
