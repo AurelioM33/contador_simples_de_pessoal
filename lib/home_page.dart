@@ -21,68 +21,82 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            "Bem Vindo!!",
-            style: TextStyle(
-              color: Colors.red,
-              fontSize: 40,
-              fontWeight: FontWeight.w900,
-            ),
+      backgroundColor: Colors.white,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/fitness.png"),
+            fit: BoxFit.cover,
           ),
-          const SizedBox(height: 30),
-          const Text(
-            "11",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 100,
-              fontWeight: FontWeight.bold,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Bem Vindo!!",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+                fontWeight: FontWeight.w900,
+              ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Colors.white,
-                  fixedSize: const Size(60, 60),
-                ),
-                onPressed: () {
-                  return decrament();
-                },
-                child: const Text(
-                  "Saiu",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 14,
-                      color: Colors.black),
+            const Padding(
+              padding: EdgeInsets.all(32),
+              child: Text(
+                "0",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 100,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(width: 16),
-              TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Colors.white,
-                  fixedSize: const Size(60, 60),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.grey,
+                      fixedSize: const Size(60, 60),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      )),
+                  onPressed: () {
+                    return decrament();
+                  },
+                  child: const Text(
+                    "Saiu",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14,
+                        color: Colors.black),
+                  ),
                 ),
-                onPressed: () {
-                  return increment();
-                },
-                child: const Text(
-                  "Entrou",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 14,
-                      color: Colors.black),
+                const SizedBox(width: 32),
+                TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.white,
+                      fixedSize: const Size(60, 60),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      )),
+                  onPressed: () {
+                    return increment();
+                  },
+                  child: const Text(
+                    "Entrou",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14,
+                        color: Colors.black),
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
