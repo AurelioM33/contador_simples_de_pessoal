@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,13 +10,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void decrament() {
+    print('Decrament');
+  }
+
+  void increment() {
+    print('Increment');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.amber,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             "Bem Vindo!!",
             style: TextStyle(
               color: Colors.red,
@@ -22,14 +33,54 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.w900,
             ),
           ),
-          SizedBox(height: 30),
-          Text(
+          const SizedBox(height: 30),
+          const Text(
             "11",
             style: TextStyle(
               color: Colors.black,
               fontSize: 100,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  fixedSize: const Size(60, 60),
+                ),
+                onPressed: () {
+                  return decrament();
+                },
+                child: const Text(
+                  "Saiu",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 14,
+                      color: Colors.black),
+                ),
+              ),
+              const SizedBox(width: 16),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  fixedSize: const Size(60, 60),
+                ),
+                onPressed: () {
+                  return increment();
+                },
+                child: const Text(
+                  "Entrou",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 14,
+                      color: Colors.black),
+                ),
+              ),
+            ],
           ),
         ],
       ),
