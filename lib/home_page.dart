@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                       backgroundColor: Colors.grey,
                       fixedSize: const Size(60, 60),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(14),
                       )),
                   onPressed: () {
                     return decrament();
@@ -68,8 +68,8 @@ class _HomePageState extends State<HomePage> {
                   child: const Text(
                     "Saiu",
                     style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 14,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 15,
                         color: Colors.black),
                   ),
                 ),
