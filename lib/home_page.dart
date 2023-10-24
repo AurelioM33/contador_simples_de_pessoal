@@ -10,14 +10,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int count = 0;
+
   void decrament() {
-    print('Decrament');
+    setState(() {
+      count--;
+    });
+    print(count);
   }
 
   void increment() {
-    print('Increment');
+    setState(() {
+      count++;
+    });
+    print(count);
   }
 
+  bool get isEmpty => count == 0;
+  bool get isFull => count == 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,20 +42,20 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Bem Vindo!!",
-              style: TextStyle(
+            Text(
+              isFull ? "Lotado" : "Bem Vindo!!",
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 40,
                 fontWeight: FontWeight.w900,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(32),
+            Padding(
+              padding: const EdgeInsets.all(32),
               child: Text(
-                "0",
+                "$count",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: isFull ? Colors.red : Colors.white,
                   fontSize: 100,
                   fontWeight: FontWeight.bold,
                 ),
@@ -57,13 +67,15 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
-                      backgroundColor: Colors.grey,
+                      backgroundColor: isEmpty
+                          ? Colors.white.withOpacity(0.2)
+                          : Colors.white,
                       fixedSize: const Size(60, 60),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       )),
                   onPressed: () {
-                    return decrament();
+                    return isEmpty ? null : decrament();
                   },
                   child: const Text(
                     "Saiu",
@@ -77,13 +89,14 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
-                      backgroundColor: Colors.white,
+                      backgroundColor:
+                          isFull ? Colors.white.withOpacity(0.2) : Colors.white,
                       fixedSize: const Size(60, 60),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       )),
                   onPressed: () {
-                    return increment();
+                    return isFull ? null : increment();
                   },
                   child: const Text(
                     "Entrou",
