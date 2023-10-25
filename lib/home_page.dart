@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 40,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w800,
               ),
             ),
             Padding(
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                       backgroundColor: isEmpty
                           ? Colors.white.withOpacity(0.2)
                           : Colors.white,
-                      fixedSize: const Size(60, 60),
+                      fixedSize: const Size(65, 65),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       )),
